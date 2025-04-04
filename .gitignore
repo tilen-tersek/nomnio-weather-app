@@ -1,0 +1,72 @@
+# Node modules
+/node_modules/
+
+# Dependency directories
+/npm-debug.log
+/yarn-error.log
+
+# Compiled output
+/dist/
+/www/
+
+/build/
+
+/tmp/
+/temp/
+
+# IDE directories and files
+/.idea/
+/.vscode/
+/*.swp
+
+# Angular CLI build artifacts
+/.angular/
+/.angular
+
+# Ionic / Capacitor build files
+/platforms/
+/capacitor-plugins/
+/android/
+/ios/
+
+# TypeScript compilation output
+/out-tsc/
+
+/tsconfig.tsbuildinfo
+
+# Angular & TypeScript build artifacts
+*.js
+*.js.map
+*.d.ts
+
+# Log files
+*.log
+
+# npm package-lock files for Yarn
+/package-lock.json
+/yarn.lock
+
+# Optional environment files
+/.env
+.env.local
+.env.production
+.env.test
+
+# Coverage directory used by testing tools
+/coverage/
+
+# JetBrains IDE files (IntelliJ IDEA, PhpStorm, etc.)
+.idea/
+
+# VSCode settings
+.vscode/
+
+# MacOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+
+# Optional: If you have generated files that you do not wish to commit, add them here
+/.eslintcache
+/.prettiercache
