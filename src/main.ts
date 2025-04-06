@@ -8,6 +8,13 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode } from '@angular/core';
+import {addIcons} from "ionicons";
+import {chevronDownOutline, sunnyOutline} from "ionicons/icons";
+
+addIcons({
+  'chevron-down-outline': chevronDownOutline,
+  'sunny-outline': sunnyOutline
+});
 
 bootstrapApplication(AppComponent, {
   providers: [
