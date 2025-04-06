@@ -3,13 +3,7 @@ import {loadWeather, setWeather} from "../action/weather.actions";
 import {IWeatherState} from "../weather.model";
 
 const initialState: IWeatherState = {
-  weather: {
-    datetime: new Date(),
-    description: '',
-    feelsLike: 20,
-    location: '',
-    temperature: 20,
-  },
+  weather: undefined,
 }
 
 export const weatherReducer = createReducer(
@@ -18,6 +12,6 @@ export const weatherReducer = createReducer(
     return { ...state, weather };
   }),
   on(loadWeather, (state, { location }): IWeatherState => {
-    return { weather: { ...state.weather, location: location } };
+    return { ...state };
   })
 );

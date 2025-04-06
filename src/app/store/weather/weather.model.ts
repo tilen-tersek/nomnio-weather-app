@@ -1,5 +1,5 @@
 export interface IWeatherState {
-  weather: IWeather;
+  weather: IWeather | null | undefined;
 }
 
 export interface IWeather {

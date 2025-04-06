@@ -3,7 +3,7 @@ import {ILoadingState} from "../loading.model";
 import {setLoading} from "../action/loading.action";
 
 const initialState: ILoadingState = {
-  loading: true,
+  loading: false,
 }
 
 export const loadingReducer = createReducer(

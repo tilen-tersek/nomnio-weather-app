@@ -1,5 +1,5 @@
 export enum ELanguage {
-  Slovene = 'SI',
+  Slovene = 'SLO',
   English = 'EN',
   German = 'DE',
 }
