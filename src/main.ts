@@ -15,6 +15,7 @@ import {locationReducer} from "./app/store/location/reducer/location.reducer";
 import {loadingReducer} from "./app/store/loading/reducer/loading.reducer";
 import {weatherReducer} from "./app/store/weather/reducer/weather.reducer";
 import {provideHttpClient} from "@angular/common/http";
+import {WeatherEffects} from "./app/store/weather/effect/weather.effect";
 
 addIcons({
   'chevron-down-outline': chevronDownOutline,
@@ -33,7 +34,7 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideEffects(),
+    provideEffects([WeatherEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
 ],
 });

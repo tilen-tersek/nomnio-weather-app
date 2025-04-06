@@ -3,7 +3,7 @@ import {IWeatherState} from "../weather.model";
 
 export const selectWeatherState = createFeatureSelector<IWeatherState>('weather');
 
-export const selectLanguage = createSelector(
+export const selectWeather = createSelector(
   selectWeatherState,
   (state: IWeatherState) => state.weather
 );
