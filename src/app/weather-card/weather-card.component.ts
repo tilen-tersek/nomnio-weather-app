@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {IonCard} from "@ionic/angular/standalone";
 import {IWeather} from "../store/weather/weather.model";
 import {WeatherDatePipe} from "../pipes/weather-date.pipe";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-weather-card',
@@ -10,6 +11,7 @@ import {WeatherDatePipe} from "../pipes/weather-date.pipe";
   imports: [
     IonCard,
     WeatherDatePipe,
+    TranslatePipe,
   ]
 })
 export class WeatherCardComponent {
@@ -39,5 +41,9 @@ export class WeatherCardComponent {
       default:
         return '❓';
     }
+  }
+
+  getWeatherTranslation(description: string): string {
+   return "weather." + description.replace(/\s+/g, '_');
   }
 }

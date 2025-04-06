@@ -9,19 +9,20 @@ import {EffectsModule, provideEffects} from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import {importProvidersFrom, isDevMode} from '@angular/core';
 import {addIcons} from "ionicons";
-import {chevronDownOutline, chevronForwardOutline, sunnyOutline} from "ionicons/icons";
+import {chevronDownCircleOutline, chevronDownOutline, chevronForwardOutline, sunnyOutline} from "ionicons/icons";
 import {languageReducer} from "./app/store/language/reducer/language.reducer";
 import {locationReducer} from "./app/store/location/reducer/location.reducer";
 import {loadingReducer} from "./app/store/loading/reducer/loading.reducer";
 import {weatherReducer} from "./app/store/weather/reducer/weather.reducer";
 import {HttpClient, provideHttpClient} from "@angular/common/http";
 import {WeatherEffects} from "./app/store/weather/effect/weather.effect";
-import {provideTranslateService, TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {provideTranslateService, TranslateLoader} from "@ngx-translate/core";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 addIcons({
   'chevron-down-outline': chevronDownOutline,
   'chevron-forward-outline': chevronForwardOutline,
+  'chevron-down-circle-outline': chevronDownCircleOutline,
   'sunny-outline': sunnyOutline
 });
 

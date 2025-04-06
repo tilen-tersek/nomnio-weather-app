@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { OpenWeatherResponse, WeatherService } from '../../../services/weather/weather.service';
-import { setWeather } from '../action/weather.actions';
+import {loadWeather, setWeather} from '../action/weather.actions';
 import { map, catchError, switchMap, delay } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { setLoading } from '../../loading/action/loading.action';
@@ -21,7 +21,7 @@ export class WeatherEffects {
      */
     loadWeather$ = createEffect(() => {
         return this.actions$.pipe(
-            ofType(setLocation),
+            ofType(loadWeather),
             switchMap(({ location }) => {
                 // Add a delay before fetching weather data
                 return of(null).pipe(
@@ -55,7 +55,7 @@ export class WeatherEffects {
      */
     setLocation$ = createEffect(() => {
         return this.actions$.pipe(
-            ofType(setLocation),
+            ofType(loadWeather),
             switchMap(() => {
                 return of(setLoading({ loading: true }));
             })

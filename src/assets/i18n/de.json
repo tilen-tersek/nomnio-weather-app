@@ -1,5 +1,38 @@
 {
   "header": {
-    "title": "Nomnio wetter"
+    "title": "Nomnio Wetter"
+  },
+  "content": {
+    "select_title": "Wählen Sie den Standort",
+    "select_description": "Wählen Sie den Standort aus, um Wetterinformationen anzuzeigen",
+    "error_desc_first": "Ein Fehler ist aufgetreten",
+    "error_desc_second": "Bitte wählen Sie einen anderen Standort"
+  },
+  "location_button": {
+    "loading": "Lade Daten ...",
+    "select_location": "Standort auswählen"
+  },
+  "language_select": {
+    "title": "Sprache wählen",
+    "cancel": "Abbrechen"
+  },
+  "location_select": {
+    "title": "Standort wählen",
+    "cancel": "Abbrechen",
+    "current": "Aktueller Standort"
+  },
+  "weather": {
+    "clear_sky": "Klarer Himmel",
+    "few_clouds": "Wenige Wolken",
+    "scattered_clouds": "Verstreute Wolken",
+    "broken_clouds": "Zerrissene Wolken",
+    "shower_rain": "Regenschauer",
+    "rain": "Regen",
+    "thunderstorm": "Gewitter",
+    "snow": "Schnee",
+    "mist": "Nebel",
+    "current_temp": "Aktuelle Temperatur",
+    "feels_like": "Gefühlt",
+    "at": "um"
   }
 }

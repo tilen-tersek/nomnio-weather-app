@@ -2,5 +2,8 @@ ion-button {
   &.cc-button{
     --background: white;
     --background-activated: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    text-transform: none;
   }
 }
