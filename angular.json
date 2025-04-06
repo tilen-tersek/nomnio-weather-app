@@ -110,16 +110,8 @@
               }
             ],
             "styles": [
-              {
-              "input": "src/global.scss"
-              },
-              {
-                "input": "src/theme/variables.scss"
-              },
-              "./node_modules/primeicons/primeicons.css",
-              "./node_modules/primeng/resources/themes/nova-light/theme.css",
-              "./node_modules/primeng/resources/primeng.min.css",
-              "./node_modules/primeflex/primeflex.css"
+              "src/global.scss",
+              "src/theme/variables.scss"
             ],
             "scripts": []
           },
