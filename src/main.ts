@@ -14,6 +14,7 @@ import {languageReducer} from "./app/store/language/reducer/language.reducer";
 import {locationReducer} from "./app/store/location/reducer/location.reducer";
 import {loadingReducer} from "./app/store/loading/reducer/loading.reducer";
 import {weatherReducer} from "./app/store/weather/reducer/weather.reducer";
+import {provideHttpClient} from "@angular/common/http";
 
 addIcons({
   'chevron-down-outline': chevronDownOutline,
@@ -22,6 +23,7 @@ addIcons({
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(),
     provideStore({
       language: languageReducer,
       location: locationReducer,
