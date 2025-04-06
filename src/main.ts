@@ -5,11 +5,11 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import {provideStore} from '@ngrx/store';
-import { provideEffects } from '@ngrx/effects';
+import {EffectsModule, provideEffects} from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode} from '@angular/core';
 import {addIcons} from "ionicons";
-import {chevronDownOutline, sunnyOutline} from "ionicons/icons";
+import {chevronDownOutline, chevronForwardOutline, sunnyOutline} from "ionicons/icons";
 import {languageReducer} from "./app/store/language/reducer/language.reducer";
 import {locationReducer} from "./app/store/location/reducer/location.reducer";
 import {loadingReducer} from "./app/store/loading/reducer/loading.reducer";
@@ -19,6 +19,7 @@ import {WeatherEffects} from "./app/store/weather/effect/weather.effect";
 
 addIcons({
   'chevron-down-outline': chevronDownOutline,
+  'chevron-forward-outline': chevronForwardOutline,
   'sunny-outline': sunnyOutline
 });
 
@@ -34,7 +35,7 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideEffects([WeatherEffects]),
+    provideEffects(WeatherEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
 ],
 });
