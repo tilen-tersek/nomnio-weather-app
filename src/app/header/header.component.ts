@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {ActionSheetController, IonButton, IonHeader, IonIcon, IonTitle} from "@ionic/angular/standalone";
-import {Store, StoreModule} from "@ngrx/store";
+import { Component } from '@angular/core';
+import {ActionSheetController, IonButton, IonHeader, IonIcon} from "@ionic/angular/standalone";
+import {Store} from "@ngrx/store";
 import {setLanguage} from "../store/language/action/language.actions";
 import {ELanguage} from "../store/language/language.consts";
 import {Observable} from "rxjs";
 import { selectLanguage } from '../store/language/selector/language.selector';
 import {AsyncPipe, UpperCasePipe} from "@angular/common";
-import {languageReducer} from "../store/language/reducer/language.reducer";
 
 @Component({
     selector: 'app-header',
@@ -16,7 +15,6 @@ import {languageReducer} from "../store/language/reducer/language.reducer";
     IonButton,
     IonHeader,
     IonIcon,
-    IonTitle,
     AsyncPipe,
     UpperCasePipe
   ]
