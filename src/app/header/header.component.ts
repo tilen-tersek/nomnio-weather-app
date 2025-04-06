@@ -6,6 +6,7 @@ import {ELanguage} from "../store/language/language.consts";
 import {Observable} from "rxjs";
 import { selectLanguage } from '../store/language/selector/language.selector';
 import {AsyncPipe, UpperCasePipe} from "@angular/common";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
     selector: 'app-header',
@@ -16,7 +17,8 @@ import {AsyncPipe, UpperCasePipe} from "@angular/common";
     IonHeader,
     IonIcon,
     AsyncPipe,
-    UpperCasePipe
+    UpperCasePipe,
+    TranslatePipe
   ]
 })
 export class HeaderComponent {
