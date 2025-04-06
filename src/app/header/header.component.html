@@ -8,7 +8,7 @@
     <!-- Right side: Language Button -->
     <div class="hc-language-container">
       <ion-button fill="clear" (click)="presentLanguageSheet()" class="hc-language-button text-black">
-        <span class="hc-language font-semibold text-sm">EN</span>
+        <span class="hc-language font-semibold text-sm">{{ (selectedLanguage$ | async) | uppercase }}</span>
         <ion-icon class="hc-language-icon text-xl pl-1" name="chevron-down-outline"></ion-icon>
       </ion-button>
     </div>
