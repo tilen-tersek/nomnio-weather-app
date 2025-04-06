@@ -3,9 +3,9 @@
     <div class="wcc-left-col flex-1">
       <div class="wc-location text-gray-800 text-base font-semibold pb-2">{{ weatherData.location }}</div>
       <div class="wc-date text-gray-800">{{ weatherData.datetime | weatherDatePipe }}</div>
-      <div class="wc-desc text-gray-800 capitalize">{{ weatherData.description }}</div>
-      <div class="wc-temp text-gray-800">Current temperature {{ weatherData.temperature }}°C</div>
-      <div class="wc-feels-like text-gray-800">Feels like {{ weatherData.feelsLike }}°C</div>
+      <div class="wc-desc text-gray-800 capitalize">{{ getWeatherTranslation(weatherData.description) | translate }}</div>
+      <div class="wc-temp text-gray-800">{{"weather.current_temp" | translate}} {{ weatherData.temperature }}°C</div>
+      <div class="wc-feels-like text-gray-800">{{"weather.feels_like" | translate}} {{ weatherData.feelsLike }}°C</div>
     </div>
     <div class="wcc-right-col flex ion-align-items-center">
       <p class="text-red-500 text-xl pr-2"> {{getWeatherIcon(weatherData.description)}}</p>

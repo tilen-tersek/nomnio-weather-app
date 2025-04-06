@@ -1,0 +1,38 @@
+{
+  "header": {
+    "title": "Nomnio vreme"
+  },
+  "content": {
+    "select_title": "Izberi lokacijo",
+    "select_description": "Izberi lokacijo za prikaz vremenskega stanja",
+    "error_desc_first": "Prišlo je do napake",
+    "error_desc_second": "Prosim izberi drugo lokacijo"
+  },
+  "location_button": {
+    "loading": "Nalagam podatke ...",
+    "select_location": "Izberi lokacijo"
+  },
+  "language_select": {
+    "title": "Izberi jezik",
+    "cancel": "Prekliči"
+  },
+  "location_select": {
+    "title": "Izberi lokacijo",
+    "cancel": "Prekliči",
+    "current": "Trenutna lokacija"
+  },
+  "weather": {
+    "clear_sky": "Jasno",
+    "few_clouds": "Delno oblačno",
+    "scattered_clouds": "Pretežno oblačno",
+    "broken_clouds": "Oblačno",
+    "shower_rain": "Plohe",
+    "rain": "Dež",
+    "thunderstorm": "Nevihte",
+    "snow": "Sneg",
+    "mist": "Megla",
+    "current_temp": "Trenutna temperatura",
+    "feels_like": "Občutek",
+    "at": "ob"
+  }
+}

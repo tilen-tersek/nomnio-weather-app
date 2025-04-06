@@ -6,6 +6,7 @@ import {ELanguage} from "../store/language/language.consts";
 import {Observable} from "rxjs";
 import { selectLanguage } from '../store/language/selector/language.selector';
 import {AsyncPipe, UpperCasePipe} from "@angular/common";
+import {TranslateModule, TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
     selector: 'app-header',
@@ -16,20 +17,24 @@ import {AsyncPipe, UpperCasePipe} from "@angular/common";
     IonHeader,
     IonIcon,
     AsyncPipe,
-    UpperCasePipe
+    UpperCasePipe,
+    TranslatePipe,
+    TranslateModule
   ]
 })
 export class HeaderComponent {
   public selectedLanguage$: Observable<ELanguage>;
 
-  constructor(private actionSheetCtrl: ActionSheetController, private store: Store) {
+  constructor(private actionSheetCtrl: ActionSheetController, private store: Store, private translateService: TranslateService) {
     this.selectedLanguage$ = this.store.select(selectLanguage);
   }
 
   async presentLanguageSheet(): Promise<void> {
+    const cancel = this.translateService.instant('language_select.cancel');
+
     const actionSheet = await this.actionSheetCtrl.create({
       cssClass:'hc-action-sheet',
-      header: 'Select language',
+      header: this.translateService.instant('language_select.title'),
       mode: 'md',
       buttons: [
         {
@@ -51,7 +56,7 @@ export class HeaderComponent {
           },
         },
         {
-          text: 'Cancel',
+          text: cancel,
           role: 'cancel',
         },
       ],

@@ -4,8 +4,9 @@ import {createReducer, on} from "@ngrx/store";
 import {setLanguage} from "../action/language.actions";
 
 const initialState: ILanguageState = {
-  language: ELanguage.Slovene
+  language: (localStorage.getItem('language') as ELanguage ?? ELanguage.Slovene)
 }
+
 
 export const languageReducer = createReducer(
   initialState,

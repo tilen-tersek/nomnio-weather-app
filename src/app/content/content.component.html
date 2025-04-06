@@ -1,5 +1,4 @@
-<ion-content >
-  <ion-refresher slot="fixed" (ionRefresh)="refreshWeatherData()">
+  <ion-refresher slot="fixed" (ionRefresh)="refreshWeatherData()" [disabled]="isLoading$ | async">
     <ion-refresher-content
       pullingIcon="chevron-down-circle-outline"
       refreshing-spinner="crescent"
@@ -10,32 +9,31 @@
   <div class="w-full p-5">
     <div class="flex flex-col gap-5">
       <!-- Content if no data -->
-      <div class="flex flex-col gap-3 justify-center w-full p-5" *ngIf="(isLoading$ | async) || (weatherData$ | async) === undefined">
-        <div class="cc-select-title font-semibold text-xl text-center">Select location</div>
-        <div class="cc-select-description font-normal text-lg text-center">Select location to display weather information.</div>
+      <div class="flex flex-col gap-3 justify-center w-full p-5" *ngIf="(weatherData$ | async) === undefined">
+        <div class="cc-select-title font-semibold text-xl text-center">{{"content.select_title" | translate}}</div>
+        <div class="cc-select-description font-normal text-lg text-center">{{"content.select_description" | translate}}</div>
       </div>
 
       <!-- Content if error -->
-      <div class="flex flex-col gap-3 justify-center w-full p-5" *ngIf="(isLoading$ | async) === false && (weatherData$ | async) === null">
-        <div class="cc-select-title font-semibold text-xl text-center">Select location</div>
+      <div class="flex flex-col gap-3 justify-center w-full p-5" *ngIf="(weatherData$ | async) === null">
+        <div class="cc-select-title font-semibold text-xl text-center">{{"content.select_title" | translate}}</div>
         <div class="flex flex-col">
-          <div class="cc-select-error font-semibold text-lg text-center text-red-700">An error occured</div>
-          <div class="cc-select-error font-semibold text-lg text-center text-red-700">Please select a different location.</div>
+          <div class="cc-select-error font-semibold text-lg text-center text-red-700">{{"content.error_desc_first" | translate}}</div>
+          <div class="cc-select-error font-semibold text-lg text-center text-red-700">{{"content.error_desc_second" | translate}}</div>
         </div>
       </div>
 
       <!-- Content card -->
-      <app-weather-card *ngIf="(isLoading$ | async) === false && (weatherData$ | async)" [weatherData]="(weatherData$ | async)!" />
+      <app-weather-card *ngIf="(weatherData$ | async)" [weatherData]="(weatherData$ | async)!" />
 
       <!-- Location select button -->
       <div>
         <ion-button class="cc-button w-full" [disabled]="(isLoading$ | async)" (click)="presentLocationSheet()">
-          <div class="cc-button-title font-semibold text-start flex-1 py-3 text-gray-800" *ngIf="(isLoading$ | async) === false">Select location</div>
-          <div class="cc-button-title font-semibold text-start flex-1 py-3 text-gray-800" *ngIf="(isLoading$ | async)">Loading data ...</div>
+          <div class="cc-button-title font-semibold text-start flex-1 py-3 text-gray-800" *ngIf="(isLoading$ | async) === false">{{"location_button.select_location" | translate}}</div>
+          <div class="cc-button-title font-semibold text-start flex-1 py-3 text-gray-800" *ngIf="(isLoading$ | async)">{{"location_button.loading" | translate}}</div>
           <ion-icon name="chevron-forward-outline" class="cc-chevron-right text-gray-800" *ngIf="(isLoading$ | async) === false"/>
           <ion-spinner name="crescent" color="dark" *ngIf="(isLoading$ | async)"></ion-spinner>
         </ion-button>
       </div>
     </div>
   </div>
-</ion-content>
