@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import {
   IonContent,
 } from '@ionic/angular/standalone';
-import {HeaderComponent} from "../header/header.component";
-import {ContentComponent} from "../content/content.component";
+import {HeaderComponent} from "../../components/header/header.component";
+import {ContentComponent} from "../../components/content/content.component";
 
 @Component({
   selector: 'app-home',

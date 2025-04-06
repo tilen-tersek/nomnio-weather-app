@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import {ActionSheetController, IonButton, IonHeader, IonIcon} from "@ionic/angular/standalone";
 import {Store} from "@ngrx/store";
-import {setLanguage} from "../store/language/action/language.actions";
-import {ELanguage} from "../store/language/language.consts";
+import {setLanguage} from "../../store/language/action/language.actions";
+import {ELanguage} from "../../store/language/language.consts";
 import {Observable} from "rxjs";
-import { selectLanguage } from '../store/language/selector/language.selector';
+import { selectLanguage } from '../../store/language/selector/language.selector';
 import {AsyncPipe, UpperCasePipe} from "@angular/common";
 import {TranslateModule, TranslatePipe, TranslateService} from "@ngx-translate/core";
 

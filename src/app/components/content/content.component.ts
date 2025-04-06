@@ -7,18 +7,18 @@ import {
   IonRefresherContent, IonSpinner
 } from "@ionic/angular/standalone";
 import {Store} from "@ngrx/store";
-import {setLocation} from "../store/location/action/location.actions";
+import {setLocation} from "../../store/location/action/location.actions";
 import {Observable} from "rxjs";
-import {selectLocation} from "../store/location/selector/location.selector";
-import {selectLoading} from "../store/loading/selector/loading.selector";
+import {selectLocation} from "../../store/location/selector/location.selector";
+import {selectLoading} from "../../store/loading/selector/loading.selector";
 import {AsyncPipe, NgIf} from "@angular/common";
-import {loadWeather} from "../store/weather/action/weather.actions";
-import {IWeather} from "../store/weather/weather.model";
-import {selectWeather} from "../store/weather/selector/weather.selector";
-import {WeatherCardComponent} from "../weather-card/weather-card.component";
+import {loadWeather} from "../../store/weather/action/weather.actions";
+import {IWeather} from "../../store/weather/weather.model";
+import {selectWeather} from "../../store/weather/selector/weather.selector";
+import {WeatherCardComponent} from "./weather-card/weather-card.component";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
-import {LocalStorageService} from "../services/storage/local-storage.service";
-import {LocationService} from "../services/location/location.service";
+import {LocalStorageService} from "../../services/storage/local-storage.service";
+import {LocationService} from "../../services/location/location.service";
 
 @Component({
   selector: 'app-content',
@@ -42,7 +42,9 @@ export class ContentComponent {
   public selectedLocation$: Observable<string>;
   public isLoading$: Observable<boolean>;
   public weatherData$: Observable<IWeather | null | undefined>;
+  public lastFetchedLocation: string = '';
   public currentLocation: string = '';
+
   constructor(private locationService: LocationService, private store: Store, private actionSheetCtrl: ActionSheetController, private localStorage: LocalStorageService, private translateService: TranslateService) {
     this.selectedLocation$ = this.store.select(selectLocation);
     this.isLoading$ = this.store.select(selectLoading);
@@ -55,7 +57,7 @@ export class ContentComponent {
     });
 
     this.selectedLocation$.subscribe(location => {
-      this.currentLocation = location;
+      this.lastFetchedLocation = location;
     });
 
     this.isLoading$.subscribe(isLoading => {
@@ -74,7 +76,7 @@ export class ContentComponent {
   }
 
   refreshWeatherData(): void{
-    this.store.dispatch(loadWeather({ location: this.currentLocation }));
+    this.store.dispatch(loadWeather({ location: this.lastFetchedLocation }));
   }
 
   async presentLocationSheet(): Promise<void> {
