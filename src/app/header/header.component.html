@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border">
+  <div class="flex flex-row ion-justify-content-between w-full py-2 px-4">
+    <!-- Left side: Icon + Title -->
+    <div class="hc-icon-title-container flex flex-row ion-align-items-center gap-3">
+      <ion-icon  class="hc-weather-icon text-blue-500 text-2xl" name="sunny-outline"/>
+      <div class="hc-weather-title  text-lg font-semibold text-black">{{"header.title" | translate}}</div>
+    </div>
+    <!-- Right side: Language Button -->
+    <div class="hc-language-container">
+      <ion-button fill="clear" (click)="presentLanguageSheet()" class="hc-language-button text-black">
+        <span class="hc-language font-semibold text-sm">{{ (selectedLanguage$ | async) | uppercase }}</span>
+        <ion-icon class="hc-language-icon text-xl pl-1" name="chevron-down-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-header>
