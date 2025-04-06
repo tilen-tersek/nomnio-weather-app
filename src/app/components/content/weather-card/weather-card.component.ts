@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {IonCard} from "@ionic/angular/standalone";
-import {IWeather} from "../store/weather/weather.model";
-import {WeatherDatePipe} from "../pipes/weather-date.pipe";
+import {IWeather} from "../../../store/weather/weather.model";
+import {WeatherDatePipe} from "../../../pipes/weather-date.pipe";
 import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
